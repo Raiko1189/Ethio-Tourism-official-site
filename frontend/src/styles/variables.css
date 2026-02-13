@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* Core Palette (Preserved as requested) */
+  --color-primary: #8B4513; 
+  --color-secondary: #006400; 
+  --color-accent: #B22222; 
+  --color-gold: #D4AF37; 
+  
+  /* Refined Neutrals for Premium Feel */
+  --color-bg: #FCF9F2; 
+  --color-surface: #FFFFFF;
+  --color-text: #1A0F06; /* Deeper, more high-contrast brown */
+  --color-text-light: #523A25;
+  
+  --color-border: rgba(139, 69, 19, 0.1);
+  --color-border-light: rgba(139, 69, 19, 0.05);
+  
+  /* Professional Grays */
+  --color-gray-50: #FBFBFA;
+  --color-gray-100: #F5F4F1;
+  --color-gray-200: #EBE9E4;
+  --color-gray-300: #DDD9D1;
+  --color-gray-400: #BCB4A4;
+  --color-gray-600: #71695A;
+  
+  /* Typography - Professional Parings */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Outfit', sans-serif;
+  
+  /* Typography Scale - Modular & Fluid */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.75rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.5rem;
+  
+  /* Letter Spacing */
+  --ls-tight: -0.02em;
+  --ls-normal: 0;
+  --ls-wide: 0.02em;
+  --ls-widest: 0.05em;
+
+  /* Line Heights */
+  --lh-tight: 1.1;
+  --lh-snug: 1.3;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.8;
+  
+  /* Effects - Soft & Layered */
+  --shadow-sm: 0 2px 8px rgba(26, 15, 6, 0.04);
+  --shadow-md: 0 8px 16px rgba(26, 15, 6, 0.08);
+  --shadow-lg: 0 24px 48px rgba(26, 15, 6, 0.12);
+  --shadow-float: 0 32px 64px rgba(26, 15, 6, 0.15);
+  
+  /* Interactive Effects */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-blur: blur(12px);
+  --glass-border: rgba(255, 255, 255, 0.3);
+
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-xl: 40px;
+  --radius-full: 9999px;
+  
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  transition: var(--transition);
+}
+
+/* Background Patterns */
+.pattern-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%238b4513' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.ornament-line {
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  margin: 2rem 0;
+  position: relative;
+}
+
+.ornament-line::after {
+  content: "✦";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-bg);
+  padding: 0 1rem;
+  color: var(--color-gold);
+}
+
+/* Typing Animations */
+.dot-typing {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 9984px 0 0 0 var(--color-primary), 9999px 0 0 0 var(--color-primary), 10014px 0 0 0 var(--color-primary);
+  animation: dot-typing 1.5s infinite linear;
+}
+
+@keyframes dot-typing {
+  0% { box-shadow: 9984px 0 0 0 var(--color-primary), 9999px 0 0 0 var(--color-primary), 10014px 0 0 0 var(--color-primary); }
+  16.667% { box-shadow: 9984px -10px 0 0 var(--color-primary), 9999px 0 0 0 var(--color-primary), 10014px 0 0 0 var(--color-primary); }
+  33.333% { box-shadow: 9984px 0 0 0 var(--color-primary), 9999px 0 0 0 var(--color-primary), 10014px 0 0 0 var(--color-primary); }
+  50% { box-shadow: 9984px 0 0 0 var(--color-primary), 9999px -10px 0 0 var(--color-primary), 10014px 0 0 0 var(--color-primary); }
+  66.667% { box-shadow: 9984px 0 0 0 var(--color-primary), 9999px 0 0 0 var(--color-primary), 10014px 0 0 0 var(--color-primary); }
+  83.333% { box-shadow: 9984px 0 0 0 var(--color-primary), 9999px 0 0 0 var(--color-primary), 10014px -10px 0 0 var(--color-primary); }
+  100% { box-shadow: 9984px 0 0 0 var(--color-primary), 9999px 0 0 0 var(--color-primary), 10014px 0 0 0 var(--color-primary); }
+}
+
+.dot-typing-sm {
+  position: relative;
+  left: -9999px;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--color-text-light);
+  color: var(--color-text-light);
+  box-shadow: 9984px 0 0 0 var(--color-text-light), 9994px 0 0 0 var(--color-text-light), 10004px 0 0 0 var(--color-text-light);
+  animation: dot-typing-sm 1.5s infinite linear;
+}
+
+@keyframes dot-typing-sm {
+  0% { box-shadow: 9984px 0 0 0 var(--color-text-light), 9994px 0 0 0 var(--color-text-light), 10004px 0 0 0 var(--color-text-light); }
+  16.667% { box-shadow: 9984px -6px 0 0 var(--color-text-light), 9994px 0 0 0 var(--color-text-light), 10004px 0 0 0 var(--color-text-light); }
+  33.333% { box-shadow: 9984px 0 0 0 var(--color-text-light), 9994px 0 0 0 var(--color-text-light), 10004px 0 0 0 var(--color-text-light); }
+  50% { box-shadow: 9984px 0 0 0 var(--color-text-light), 9994px -6px 0 0 var(--color-text-light), 10004px 0 0 0 var(--color-text-light); }
+  66.667% { box-shadow: 9984px 0 0 0 var(--color-text-light), 9994px 0 0 0 var(--color-text-light), 10004px 0 0 0 var(--color-text-light); }
+  83.333% { box-shadow: 9984px 0 0 0 var(--color-text-light), 9994px 0 0 0 var(--color-text-light), 10004px -6px 0 0 var(--color-text-light); }
+  100% { box-shadow: 9984px 0 0 0 var(--color-text-light), 9994px 0 0 0 var(--color-text-light), 10004px 0 0 0 var(--color-text-light); }
+}
